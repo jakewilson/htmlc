@@ -13,6 +13,7 @@ import sys
 # the 'w+' says open a file for write, and create it if it doesn't exist
 f = open(sys.argv[1], 'w+')
 tab = '    ' # four spaces
+f.write('<!DOCTYPE html>');
 f.write('<html>\n')
 f.write(tab + '<head>\n')
 f.write(tab + tab + '<title></title>\n')
