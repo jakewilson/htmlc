@@ -9,11 +9,22 @@
 # new html file.
 
 import sys
+import re
+
+file = sys.argv[1]
+match = re.search('\.html$', file)
+
+# add html extension if there isn't one
+if match == None:
+    file += '.html'
+else:
+    print 'No match'
 
 # the 'w+' says open a file for write, and create it if it doesn't exist
-f = open(sys.argv[1], 'w+')
+f = open(file, 'w+')
 tab = '    ' # four spaces
-f.write('<!DOCTYPE html>\n');
+
+f.write('<!DOCTYPE html>\n')
 f.write('<html>\n')
 f.write(tab + '<head>\n')
 f.write(tab + tab + '<title></title>\n')
