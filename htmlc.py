@@ -10,8 +10,14 @@
 
 import sys
 import re
+#import argparse
 
-file = sys.argv[1]
+# if a file name isn't provided, call this file 'file'
+if len(sys.argv) >= 2:
+    file = sys.argv[1]
+else:
+    file = 'file'
+
 match = re.search('\.html$', file)
 
 # add html extension if there isn't one
